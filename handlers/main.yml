@@ -37,11 +37,6 @@
     - nginx_state != 'absent'
   listen: (Handler) Run NGINX
 
-- name: (Handler) Start NGINX Amplify agent
-  ansible.builtin.service:
-    name: amplify-agent
-    state: started
-
 - name: (Handler) Start logrotate
   ansible.builtin.command:
     cmd: logrotate -f /etc/logrotate.d/nginx
